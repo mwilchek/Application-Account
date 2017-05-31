@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.NewAccountController">
+    <children>
+        <TextArea editable="false" prefHeight="59.0" prefWidth="598.0" text="New Account">
+            <font>
+                <Font name="Microsoft Sans Serif" size="29.0" />
+            </font>
+        </TextArea>
+        <Button layoutX="12.0" layoutY="550.0" mnemonicParsing="True" onMouseClicked="#createAccount" text="Create Account" underline="true" />
+      <TextField editable="false" layoutX="12.0" layoutY="100.0" prefHeight="25.0" prefWidth="75.0" text="First Name:" />
+      <TextField editable="false" layoutX="12.0" layoutY="198.0" prefHeight="22.0" prefWidth="75.0" text="Username:" />
+      <TextField editable="false" layoutX="281.0" layoutY="100.0" prefHeight="25.0" prefWidth="75.0" text="Last Name:" />
+      <DatePicker id="dob" layoutX="364.0" layoutY="150.0" />
+      <TextField editable="false" layoutX="12.0" layoutY="149.0" prefHeight="22.0" prefWidth="75.0" text="SSN:" />
+      <TextField editable="false" layoutX="281.0" layoutY="148.0" prefHeight="25.0" prefWidth="75.0" text="DOB:" />
+      <TextField id="firstName" layoutX="98.0" layoutY="100.0" prefHeight="25.0" prefWidth="153.0" promptText="first name" />
+      <TextField id="lastName" layoutX="364.0" layoutY="100.0" prefHeight="25.0" prefWidth="161.0" promptText="last name" />
+      <ChoiceBox id="gender" layoutX="364.0" layoutY="199.0" prefWidth="150.0" />
+      <TextField editable="false" layoutX="281.0" layoutY="197.0" prefHeight="25.0" prefWidth="75.0" text="Gender:" />
+      <TextField id="ssn" layoutX="98.0" layoutY="148.0" prefHeight="25.0" prefWidth="153.0" promptText="social security number" />
+      <TextField layoutX="98.0" layoutY="197.0" prefHeight="25.0" prefWidth="153.0" promptText="user name" />
+      <PasswordField id="password" layoutX="100.0" layoutY="248.0" />
+      <TextField editable="false" layoutX="12.0" layoutY="247.0" prefHeight="22.0" prefWidth="75.0" text="Password:" />
+      <TextField editable="false" layoutX="12.0" layoutY="289.0" prefHeight="22.0" prefWidth="113.0" text="Confirm Password:" />
+      <PasswordField id="password2" layoutX="136.0" layoutY="290.0" />
+      <TextField editable="false" layoutX="91.0" layoutY="379.0" prefHeight="23.0" prefWidth="68.0" text="NOTICE:" />
+      <TextField id="notice" editable="false" layoutX="173.0" layoutY="378.0" prefHeight="25.0" prefWidth="386.0" />
+      <Button layoutX="319.0" layoutY="246.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="189.0" text="Upload Profile Picture" onMouseClicked="#uploadProfilePic">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
