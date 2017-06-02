@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProfileController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ProfileController">
     <children>
         <TextArea editable="false" prefHeight="20.0" prefWidth="598.0" text="Account Information">
             <font>
@@ -15,14 +15,14 @@
             </font>
         </TextArea>
       <Button layoutX="12.0" layoutY="550.0" mnemonicParsing="True" onMouseClicked="#logOff" text="Log Off" underline="true" />
-        <ImageView id="profilePic" fx:id="imgview" fitHeight="203.0" fitWidth="201.0" layoutX="383.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="profilePic" fitHeight="203.0" fitWidth="201.0" layoutX="383.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
       <TextField editable="false" layoutX="14.0" layoutY="97.0" prefHeight="25.0" prefWidth="75.0" text="First Name:" />
       <TextField editable="false" layoutX="14.0" layoutY="128.0" prefHeight="25.0" prefWidth="75.0" text="Last Name:" />
       <TextField editable="false" layoutX="14.0" layoutY="160.0" prefHeight="25.0" prefWidth="75.0" text="DOB:" />
       <TextField editable="false" layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="75.0" text="Gender:" />
-      <TextField id="firstName" editable="false" layoutX="99.0" layoutY="97.0" prefHeight="25.0" prefWidth="153.0" />
-      <TextField id="lastName" editable="false" layoutX="99.0" layoutY="128.0" prefHeight="25.0" prefWidth="153.0" />
-      <TextField id="gender" editable="false" layoutX="99.0" layoutY="192.0" prefHeight="25.0" prefWidth="153.0" />
-      <TextField id="dob" editable="false" layoutX="99.0" layoutY="160.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="firstName" editable="false" layoutX="99.0" layoutY="97.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="lastName" editable="false" layoutX="99.0" layoutY="128.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="gender" editable="false" layoutX="99.0" layoutY="192.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="dob" editable="false" layoutX="99.0" layoutY="160.0" prefHeight="25.0" prefWidth="153.0" />
     </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-package gui_loaders;
+package views;
 
 /* Java class file that calls to show and load New Account GUI page */
 
@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegisterDriver extends Application {
+abstract class RegisterDriver extends Application {
     private static Stage registerStage = new Stage();
 
-    public RegisterDriver() throws IOException {
+    RegisterDriver() throws IOException {
 
         Parent registerView = FXMLLoader.load(getClass().getResource("NewAccount.fxml"));
         registerStage.setTitle("New Account Page");

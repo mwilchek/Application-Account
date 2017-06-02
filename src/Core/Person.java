@@ -3,10 +3,11 @@ package Core; /**
  * Attributes include: first name, last name, SSN, dob, gender
  */
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Person {
+public class Person implements Serializable{
     private String firstName;
     private String lastName;
     private int ssn;

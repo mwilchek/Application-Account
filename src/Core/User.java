@@ -10,11 +10,13 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class User extends Person implements Comparable<User>{
+public class User extends Person implements Serializable, Comparable<User>{
 
     private String userName;
     private String email;
@@ -23,7 +25,7 @@ public class User extends Person implements Comparable<User>{
     private String picPath;
     private BufferedImage profilePic;
 
-    public User(String userName, String password) {
+    public User(String firstNameText, String lastNameText, int ssn, LocalDate value, String gender, String text, String userName, int phoneNum, String password, BufferedImage bimg) {
         this.userName = userName;
         this.password = password;
     }
@@ -93,7 +95,7 @@ public class User extends Person implements Comparable<User>{
      * Validate Password: Must have 1 number, 1 upper case letter, 1 lower case
      * letter, 1 special character
      */
-    public void validatePassword(String password) {
+    public boolean validatePassword(String password) {
         this.password = password;
         boolean hasUpperLetter = false;
         boolean hasLowerCase = false;
@@ -129,12 +131,12 @@ public class User extends Person implements Comparable<User>{
 
             }
             if (strong) {
-                System.out.println("PASSWORD IS STRONG");
+                return true;
             } else {
-                System.out.println("PASSWORD IS NOT STRONG");
+                return false;
             }
         } else {
-            System.out.println("Error: PASSWORD MUST BE AT LEAST 8 CHARACTERS");
+            return false;
         }
     }
 

@@ -1,13 +1,10 @@
-package Controllers;
+package views;
 
 import Core.*;
-import gui_loaders.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import view.HospitalListJavaFXView;
-
+import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
@@ -16,11 +13,7 @@ public class LoginController {
     @FXML
     PasswordField password;
 
-    boolean exist;
-
-    {
-        exist = false;
-    }
+    boolean exist = false;
 
     /* Check login credentials */
     public void authenticate() {
@@ -30,7 +23,11 @@ public class LoginController {
             if (userName.getText().equals(AccountList.getUsers().get(i).getUserName()) && password.getText().equals(AccountList.getUsers().get(i).getPassword())) {
                 System.out.println("Welcome " + userName.getText());
                 try {
-                    new HospitalListJavaFXView();
+                    new ProfileDriver(){
+                        @Override
+                        public void start(Stage primaryStage) throws Exception {
+                        }
+                    };
                 } catch (IOException e) {
                     System.err.println("Error opening profile page.");
                     e.printStackTrace();
@@ -43,6 +40,11 @@ public class LoginController {
 
     public void openRegister() throws IOException {
         System.out.println("Opening Registration...");
-        new RegisterDriver();
+        new RegisterDriver(){
+            @Override
+            public void start(Stage primaryStage) throws Exception {
+
+            }
+        };
     }
 }

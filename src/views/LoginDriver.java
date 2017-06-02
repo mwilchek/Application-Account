@@ -1,4 +1,4 @@
-package gui_loaders;
+package views;
 
 import Core.*;
 import javafx.application.Application;
@@ -14,7 +14,7 @@ public class LoginDriver extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("gui/LoginScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         primaryStage.setTitle("Application Login");
         primaryStage.setScene(new Scene(root, 726, 300));
         primaryStage.show();
