@@ -4,97 +4,78 @@ package Core; /**
  */
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
 
-public class Person implements Serializable{
+public class Person implements Serializable {
     private String firstName;
     private String lastName;
-    private int ssn;
-    private Date dob;
+    private String dob;
     private String gender;
 
     /**
-     * Set Core.Person Class with null values
+     * Set Core.Person Class with test values
+     * @param firstName
+     * @param lastName
+     * @param ssn
+     * @param dob
+     * @param gender
      */
     public Person() {
-
+        this.firstName = "Matt";
+        this.lastName = "Wilchek";
+        this.dob = "10/16/1989";
+        this.gender = "male";
     }
 
-    /**
-     * Set Core.Person Class with Specific Attributes
-     */
-    public Person(String firstName, String lastName, int ssn, Date dob, String gender) {
+    public Person(String firstName, String lastName, String dob, String gender) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.ssn = ssn;
         this.dob = dob;
         this.gender = gender;
     }
 
-    /**
-     * Return First Name
-     */
+    /** Get First Name of Person */
     public String getFirstName() {
         return firstName;
     }
-
+    
+    /** Set First Name of Person */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    /**
-     * Return Last Name
-     */
+    /** Get Last Name of Person */
     public String getLastName() {
         return lastName;
     }
 
+    /** Set Last Name of Person */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    /**
-     * Return SSN
-     */
-    public int getSSN() {
-        return ssn;
+    /** Get DOB of Person */
+    public String getDob() {
+        return dob;
     }
 
-    public void setSSN(int ssn) {
-        this.ssn = ssn;
+    /** Set DOB of Person */
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-    /**
-     * Return Core.Person Gender
-     */
+    /** Get Gender of Person */
     public String getGender() {
         return gender;
     }
 
+    /** Set Gender of Person */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
-    /**
-     * Set DOB of person as Calendar type object
-     */
-    public void setDOB(int year, int month, int day) {
-        Calendar cal = Calendar.getInstance();
-        cal.set(year, month, day);
-        this.dob = cal.getTime();
-    }
-
-    /**
-     * Return DOB
-     */
-    public Date getDOB() {
-        return dob;
-    }
-
     @Override
     public String toString() {
-        return "Core.Person{" +
+        return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dob='" + dob + '\'' +

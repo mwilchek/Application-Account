@@ -12,8 +12,13 @@ import java.util.ArrayList;
 
 public class LoginDriver extends Application {
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+        loadUserAccounts();
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         primaryStage.setTitle("Application Login");
         primaryStage.setScene(new Scene(root, 726, 300));
@@ -31,8 +36,4 @@ public class LoginDriver extends Application {
         }
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

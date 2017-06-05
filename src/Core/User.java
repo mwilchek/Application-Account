@@ -4,46 +4,33 @@ package Core; /**
  * Resource - Picture Handling: http://javarevisited.blogspot.com/2011/12/read-write-image-in-java-example.html
  */
 
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.AddressException;
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
-import java.awt.image.BufferedImage;
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class User extends Person implements Serializable, Comparable<User>{
-
+public class User extends Person implements Serializable {
     private String userName;
     private String email;
-    private int phoneNum;
+    private String phone;
     private String password;
-    private String picPath;
-    private BufferedImage profilePic;
+    private String profilePic;
 
-    public User(String firstNameText, String lastNameText, int ssn, LocalDate value, String gender, String text, String userName, int phoneNum, String password, BufferedImage bimg) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
 
-    public User(String userName, String email, int phoneNum, String password, String picPath, BufferedImage profilePic) {
+    public User(String userName, String email, String phone, String password, String profilePic) {
         this.userName = userName;
         this.email = email;
-        this.phoneNum = phoneNum;
+        this.phone = phone;
         this.password = password;
-        this.picPath = picPath;
         this.profilePic = profilePic;
     }
 
-    public User(String firstName, String lastName, int ssn, Date dob, String gender, String userName, String email, int phoneNum, String password, BufferedImage profilePic) {
-        super(firstName, lastName, ssn, dob, gender);
+    public User(String firstName, String lastName, String dob, String gender, String userName, String email, String phone, String password, String profilePic) {
+        super(firstName, lastName, dob, gender);
         this.userName = userName;
         this.email = email;
-        this.phoneNum = phoneNum;
+        this.phone = phone;
         this.password = password;
         this.profilePic = profilePic;
     }
@@ -56,31 +43,28 @@ public class User extends Person implements Serializable, Comparable<User>{
         this.userName = userName;
     }
 
-    public boolean equals(User user) {
-        return(this.userName.equals(user.userName));
-    }
-
     public String getEmail() {
         return email;
     }
 
-    public static boolean isValidEmailAddress(String email) {
-        boolean result = true;
-        try {
-            InternetAddress emailAddr = new InternetAddress(email);
-            emailAddr.validate();
-        } catch (AddressException ex) {
-            result = false;
-        }
-        return result;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getPhoneNum() {
-        return phoneNum;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhone(int phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhoto() {
+        return profilePic;
+    }
+
+    public void setPhoto(String photo) {
+        this.profilePic = photo;
     }
 
     public String getPassword() {
@@ -90,85 +74,15 @@ public class User extends Person implements Serializable, Comparable<User>{
     public void setPassword(String password) {
         this.password = password;
     }
-
-    /**
-     * Validate Password: Must have 1 number, 1 upper case letter, 1 lower case
-     * letter, 1 special character
-     */
-    public boolean validatePassword(String password) {
-        this.password = password;
-        boolean hasUpperLetter = false;
-        boolean hasLowerCase = false;
-        boolean hasDigit = false;
-        boolean hasSpecial = false;
-        boolean strong = false;
-        Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
-        Matcher matcher = pattern.matcher(password);
-
-        if (password.length() >= 8) {
-            for (int i = 0; i < password.length(); i++) {
-                char x = password.charAt(i);
-                if (Character.isUpperCase(x)) {
-
-                    hasUpperLetter = true;
-                } else if (Character.isLowerCase(x)) {
-
-                    hasLowerCase = true;
-                } else if (Character.isDigit(x)) {
-
-                    hasDigit = true;
-                } else if (!matcher.matches()) {
-
-                    hasSpecial = true;
-                }
-
-                // Password strong, break the loop
-                if (hasUpperLetter && hasLowerCase && hasDigit && hasSpecial) {
-
-                    strong = true;
-                    break;
-                }
-
-            }
-            if (strong) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    public String getPicPath() {
-        return picPath;
-    }
-
-    public BufferedImage getProfilePic() {
-        File imageFile = new File(picPath);
-        try {
-            profilePic = ImageIO.read(imageFile);
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
-
-        return profilePic;
-    }
-
-    @Override
-    public int compareTo(User user) {
-        return(this.userName.compareTo(user.userName));
-    }
-
+   
     @Override
     public String toString() {
-        return "Core.User{" +
-                "userName= '" + userName + '\'' +
-                ", email= '" + email + '\'' +
-                ", phone= '" + phoneNum + '\'' +
-                ", password= '" + password + '\'' +
-                ", photo= '" + profilePic + '\'' +
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", photo='" + profilePic + '\'' +
                 '}';
     }
 

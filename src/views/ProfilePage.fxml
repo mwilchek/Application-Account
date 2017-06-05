@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ProfileController">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
     <children>
         <TextArea editable="false" prefHeight="20.0" prefWidth="598.0" text="Account Information">
             <font>
@@ -24,5 +24,11 @@
       <TextField fx:id="lastName" editable="false" layoutX="99.0" layoutY="128.0" prefHeight="25.0" prefWidth="153.0" />
       <TextField fx:id="gender" editable="false" layoutX="99.0" layoutY="192.0" prefHeight="25.0" prefWidth="153.0" />
       <TextField fx:id="dob" editable="false" layoutX="99.0" layoutY="160.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField editable="false" layoutX="14.0" layoutY="226.0" prefHeight="25.0" prefWidth="75.0" text="Email:" />
+      <TextField editable="false" layoutX="14.0" layoutY="261.0" prefHeight="25.0" prefWidth="75.0" text="Phone:" />
+      <TextField fx:id="email" editable="false" layoutX="99.0" layoutY="226.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="phone" editable="false" layoutX="99.0" layoutY="261.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="notice" editable="false" layoutX="165.0" layoutY="550.0" prefHeight="25.0" prefWidth="309.0" />
+      <TextField editable="false" layoutX="89.0" layoutY="550.0" prefHeight="25.0" prefWidth="75.0" text="NOTICE:" />
     </children>
 </AnchorPane>
