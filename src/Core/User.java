@@ -1,7 +1,6 @@
 package Core; /**
  * Create Core.User Assignment; Core.Person Class
  * Attributes include: user name, email, phone number, password, profile photo
- * Resource - Picture Handling: http://javarevisited.blogspot.com/2011/12/read-write-image-in-java-example.html
  */
 
 import java.io.Serializable;
