@@ -8,7 +8,7 @@ public class AcctDataTracker {
         ObjectOutputStream output;
         output = new ObjectOutputStream(new FileOutputStream("accounts.dat"));
         output.writeObject(accounts);
-        System.out.println("A full list of accounts fot the application can be found under the location where this program was saved.");
+        System.out.println("A full list of accounts for this application can be found under the location where this program was saved.");
     }
 
     public static Object readAccounts() throws IOException, ClassNotFoundException {

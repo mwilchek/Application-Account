@@ -16,7 +16,7 @@ public class RegisterDriver {
     	Stage registerStage = new Stage();
         Parent registerView = FXMLLoader.load(getClass().getResource("NewAccount.fxml"));
         registerStage.setTitle("New Account Page");
-        Scene registerScene = new Scene(registerView, 600, 600);
+        Scene registerScene = new Scene(registerView, 700, 600);
 
         registerStage.setScene(registerScene);
         registerStage.show();

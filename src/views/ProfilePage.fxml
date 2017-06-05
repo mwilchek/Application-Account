@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+<?import java.net.URL?>
+<AnchorPane styleClass="root3" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
     <children>
         <TextArea editable="false" prefHeight="20.0" prefWidth="598.0" text="Account Information">
             <font>
@@ -31,4 +32,7 @@
       <TextField fx:id="notice" editable="false" layoutX="165.0" layoutY="550.0" prefHeight="25.0" prefWidth="309.0" />
       <TextField editable="false" layoutX="89.0" layoutY="550.0" prefHeight="25.0" prefWidth="75.0" text="NOTICE:" />
     </children>
+    <stylesheets>
+        <URL value="@profileStyle.css" />
+    </stylesheets>
 </AnchorPane>

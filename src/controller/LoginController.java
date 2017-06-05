@@ -1,7 +1,8 @@
 package controller;
 
 import Core.*;
-import views.*;
+import views.ProfileDriver;
+import views.RegisterDriver;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;

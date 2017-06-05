@@ -9,7 +9,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import Core.*;
-import views.*;
+import views.NewAccountCreated;
+import views.RegisterDriver;
 import javafx.stage.FileChooser.ExtensionFilter;
 import java.io.File;
 import java.io.IOException;
@@ -62,10 +63,10 @@ public class NewAccountController {
 
     	/** Validate Info */
         if ( firstName.getText().equals("") || lastName.getText().equals("") || dob.getText().equals("")
-                || gender.getSelectionModel().getSelectedItem().equals(null) || userName.getText().equals("") || password.getText().equals("") ) {
+                || gender.getSelectionModel().getSelectedItem().toString().equals("") || userName.getText().equals("") || password.getText().equals("") ) {
             failFieldsNotComplete.setVisible(true); }
 
-        if (!validateEmail(email.getText())) {
+        if ( !email.getText().matches("\\w+@\\w+\\.\\w+") ) {
             failEmailFormat.setVisible(true); }
 
         if ( !password.getText().equals(password2.getText()) ) {
@@ -82,7 +83,7 @@ public class NewAccountController {
                 && !gender.getSelectionModel().getSelectedItem().equals(null) && !userName.getText().equals("") && !password.getText().equals("")
                 && password.getText().equals(password2.getText())
                 && validatePassword(password.getText())
-                && validateEmail(email.getText())
+                && email.getText().matches("\\w+@\\w+\\.\\w+")
                 && !(AccountList.getUsers().contains(userName.getText()))
                 )
 
@@ -98,16 +99,7 @@ public class NewAccountController {
         } catch (IOException e) {
             e.printStackTrace(); }
     }
-    
-    /**Validate email address by verifying Internet Address */
-    public boolean validateEmail(String email) {
-        if ( !email.matches("\\w+@\\w+\\.\\w+com")  ||  !email.matches("\\w+@\\w+\\.\\w+edu") ){
-            return false;
-        }
-        else
-        return true;
-    }
-    
+
     /**
      * Validate Password: Must have 1 number, 1 upper case letter, 1 lower case
      * letter, 1 special character
